@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-slate-700 bg-navy-50 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-amber-500;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:bg-amber-700
+           text-white font-display font-semibold text-sm px-5 py-2.5 rounded-lg
+           transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50
+           disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white hover:bg-navy-50 border border-navy-200
+           text-navy-800 font-display font-semibold text-sm px-5 py-2.5 rounded-lg
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-red-600 hover:bg-red-700
+           text-white font-display font-semibold text-sm px-5 py-2.5 rounded-lg
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-white rounded-xl shadow-card hover:shadow-card-hover
+           transition-shadow duration-300 overflow-hidden;
+  }
+
+  /* ── Form fields ── */
+  .field-label {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+
+  .field-input {
+    @apply w-full px-3.5 py-2.5 rounded-lg border border-slate-200
+           bg-white text-slate-700 text-sm placeholder-slate-400
+           focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200
+           transition-colors duration-150;
+  }
+
+  .field-select {
+    @apply field-input appearance-none cursor-pointer;
+  }
+
+  .field-textarea {
+    @apply field-input resize-none;
+  }
+
+  /* ── Section wrapper ── */
+  .section-wrapper {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ── Status badges ── */
+  .badge-pending  { @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800; }
+  .badge-approved { @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-green-100  text-green-800; }
+  .badge-rejected { @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-red-100    text-red-800; }
+
+  /* ── Page header ── */
+  .page-header {
+    @apply bg-navy-800 text-white py-12 sm:py-16;
+  }
+
+  /* ── Table ── */
+  .data-table {
+    @apply w-full text-sm text-left;
+  }
+  .data-table th {
+    @apply px-4 py-3 font-semibold text-navy-700 bg-navy-50 border-b border-navy-100 uppercase tracking-wide text-xs;
+  }
+  .data-table td {
+    @apply px-4 py-3 border-b border-slate-100 text-slate-600;
+  }
+  .data-table tr:last-child td {
+    @apply border-b-0;
+  }
+  .data-table tbody tr:hover td {
+    @apply bg-navy-50;
+  }
+}
