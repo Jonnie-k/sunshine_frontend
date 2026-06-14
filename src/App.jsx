@@ -20,6 +20,8 @@ import AdminDashboard          from './pages/admin/Dashboard'
 import AdminManageCourses      from './pages/admin/ManageCourses'
 import AdminManageApplications from './pages/admin/ManageApplications'
 
+
+
 export default function App() {
   return (
     <Routes>
